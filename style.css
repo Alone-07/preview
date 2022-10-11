@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+:root {
+--visible: block;
+--main_margin:1.5rem auto;
+--m: 0;
+--p: 0;
+--w: min(650px, 90%);
+--w_s: 5px;
+--ff1: 'Fraunces', serif;
+--ff2: 'Montserrat', sans-serif;
+/* primary */
+--Dark_cyan: hsl(158, 36%, 37%);
+--Cream: hsl(30, 38%, 92%);
+
+/* secondary */
+--Very_dark_blue: hsl(212, 21%, 14%);
+--Dark_grayish_blue: hsl(228, 12%, 48%);
+--White: hsl(0, 0%, 100%);
+}
+
+button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem; 
+    background-color: var(--Dark_cyan);
+    color: var(--White);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+}
+button > img {
+    margin-right: .5rem;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+
+body {
+    min-height: 100vh;
+    margin: var(--m);
+    padding: var(--p);
+    background: var(--Cream);
+    color: var(--Dark_grayish_blue);
+    font-family: var(--ff2);
+    display: grid;
+    place-items: center;
+}
+h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+main {
+    width: var(--w);
+    margin: var(--main_margin);
+    background-color: var(--White);
+}
+.img-mobile {
+    display: var(--visible);
+}
+.img-desktop {
+    --visible: none;
+    display: var(--visible);
+}
+.text_container {
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+}
+.head {
+    font-size: 1.9rem;
+    font-family: var(--ff1);
+    color: var(--Very_dark_blue);
+}
+
+.pre_head {
+    text-transform: uppercase;
+    letter-spacing: var(--w_s);
+    font-weight: 500;
+}
+
+.text {
+    line-height: 1.5;
+    font-weight: 500;
+}
+.price_container {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+.price {
+    font-family: var(--ff1);
+    font-size: 2rem;
+    color: var(--Dark_cyan);
+    margin-right: 1.5rem;
+}
+
+.price_container s{
+    font-size: .9rem
+}
+
+@media screen and (min-width: 600px){
+    :root  {
+        --main_margin: 0 auto;
+        --visible: none;
+    }
+    .img-desktop {
+        --visible: block;
+        border-radius: 10px 0px 0px 0px;
+    }
+    main {
+        display: flex;
+        flex-flow: row;
+    }
+    .img_container {
+        width: 100%;
+    }
+    .text_container {
+        width: 100%;
+        padding: 0rem 3rem 1.5rem 1.7rem;
+    }
+}
